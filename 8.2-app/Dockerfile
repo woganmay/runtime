@@ -26,6 +26,7 @@ RUN apt update && \
 
 # Configure the default site
 COPY ./8.2-app/000-default.conf /etc/apache2/sites-available/000-default.conf
+RUN a2enmod rewrite
 
 # Create a non-root runtime user with group 33 (apache's www-data group)
 RUN groupadd --force -g 33 amberstone
