@@ -8,4 +8,4 @@ RUN apt-get update && \
     docker-php-ext-install pdo_pgsql
 
 # Configure the default site
-COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
