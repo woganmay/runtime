@@ -15,4 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: (cd 8.2; docker build . --file Dockerfile --tag woganmay/runtime-8.2:$(date +%s)
+      run: (cd 8.2; docker build . --file Dockerfile --tag woganmay/runtime-8.2:$(date +%s))
+
+    - name: Publish to docker hub
+      run: date
