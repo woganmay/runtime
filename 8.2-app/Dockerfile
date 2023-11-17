@@ -25,4 +25,4 @@ RUN apt update && \
     apt install -y nodejs
 
 # Configure the default site
-COPY ./8.2/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY ./8.2-app/000-default.conf /etc/apache2/sites-available/000-default.conf
