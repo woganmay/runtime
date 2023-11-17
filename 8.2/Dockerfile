@@ -15,7 +15,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 
 # Install the latest NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh | bash && \
-    apt install nodejs
+    apt install -y nodejs
 
 # Configure the default site
 COPY ./8.2/000-default.conf /etc/apache2/sites-available/000-default.conf
