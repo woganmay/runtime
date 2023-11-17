@@ -7,7 +7,7 @@ echo "$date Starting backup run";
 
 # First, rsync all /source to /destination for app storage
 mkdir -p /destination/app
-rsync -azh /source /destination/app
+rsync -rptlD /source/ /destination/app/
 
 echo "$date Storage path rsync to NFS complete";
 
