@@ -6,7 +6,7 @@ WORKDIR /var/www/html
 # Docs: https://github.com/mlocati/docker-php-extension-installer
 RUN apt-get update && \
     apt-get install -y libpq-dev libzip-dev && \
-    docker-php-ext-install pdo_pgsql zip pcntl
+    docker-php-ext-install pdo_pgsql zip pcntl redis
 
 # Install the latest Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
