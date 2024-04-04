@@ -7,7 +7,7 @@ WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get install -y libpq-dev libzip-dev && \
     pecl install redis-6.0.2 && \
-    docker-php-ext-install pdo_pgsql zip pcntl && \
+    docker-php-ext-install pdo_pgsql zip pcntl gd && \
     docker-php-ext-enable redis
 
 # Install the latest Composer
