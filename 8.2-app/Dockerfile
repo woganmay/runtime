@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 # Install GD
 RUN apt-get install -y libjpeg-dev libpng-dev libwebp-dev libfreetype-dev && \
-    docker-php-ext-configure gd --with-jpeg --with-png --with-webp --with-freetype && \
+    docker-php-ext-configure gd --with-jpeg --with-webp --with-freetype && \
     docker-php-ext-install gd
 
 # Install the latest Composer
