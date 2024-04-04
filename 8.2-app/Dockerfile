@@ -11,7 +11,7 @@ RUN apt-get update && \
     docker-php-ext-enable redis
 
 # Install GD
-RUN apt-get install libjpeg-dev libpng-dev libwebp-dev libfreetype-dev && \
+RUN apt-get install -y libjpeg-dev libpng-dev libwebp-dev libfreetype-dev && \
     docker-php-ext-configure gd --with-jpeg --with-png --with-webp --with-freetype && \
     docker-php-ext-install gd
 
