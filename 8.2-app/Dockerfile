@@ -10,6 +10,11 @@ RUN apt-get update && \
     docker-php-ext-install pdo_pgsql zip pcntl && \
     docker-php-ext-enable redis
 
+# Install GD
+RUN apt-get install libjpeg-dev libpng-dev libwebp-dev libfreetype-dev && \
+    docker-php-ext-configure gd --with-jpeg --with-png --with-webp --with-freetype && \
+    docker-php-ext-install gd
+
 # Install the latest Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
