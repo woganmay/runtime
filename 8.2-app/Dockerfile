@@ -7,8 +7,8 @@ WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get install -y libpq-dev libzip-dev && \
     pecl install redis-6.0.2 && \
-    docker-php-ext-install pdo_pgsql zip pcntl && \
-    docker-php-ext-enable redis
+    docker-php-ext-install pdo_pgsql mysqli pdo pdo_mysql zip pcntl && \
+    docker-php-ext-enable redis mysqli pdo pdo_mysql
 
 # Install GD
 RUN apt-get install -y libjpeg-dev libpng-dev libwebp-dev libfreetype-dev && \
