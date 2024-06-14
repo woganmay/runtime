@@ -5,7 +5,7 @@ WORKDIR /var/www/html
 # Install the PostgreSQL PDO extension
 # Docs: https://github.com/mlocati/docker-php-extension-installer
 RUN apt-get update && \
-    apt-get install -y libpq-dev libzip-dev && \
+    apt-get install -y libpq-dev libzip-dev unzip && \
     pecl install redis-6.0.2 && \
     docker-php-ext-install pdo_pgsql zip pcntl && \
     docker-php-ext-enable redis
